@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Evaluador {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -14,8 +15,14 @@ public class Evaluador {
         int cantidadProductos = scanner.nextInt();
         scanner.nextLine();
 
+        while (cantidadProductos < 0) {
+            System.out.print("La cantidad no puede ser negativa. Ingrese una cantidad válida: ");
+            cantidadProductos = scanner.nextInt();
+            scanner.nextLine();
+        }
+
         for (int indice = 1; indice <= cantidadProductos; indice++) {
-            System.out.println("\nProducto " + indice);
+            System.out.println("Producto " + indice);
 
             System.out.print("Ingrese el nombre del producto: ");
             String nombreProducto = scanner.nextLine();
@@ -51,5 +58,5 @@ public class Evaluador {
 
         scanner.close();
     
-
+    }
 }
